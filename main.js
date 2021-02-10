@@ -24,9 +24,9 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-const validadCred = array => {
+const validateCred = array => {
     let sum = 0;
-    let arrayReverse = array.slcie().reverse();
+    let arrayReverse = array.slice().reverse();
     for (let i = 0; i < arrayReverse.length; i++) {
         if (i % 2 === 0) sum += arrayReverse[i];
         else {
@@ -36,7 +36,17 @@ const validadCred = array => {
         }
     }
     return (sum % 10 === 0);
-}
+};
+
+const findInvalidCards = array => {
+    let invalid = [];
+    for (let x of array) {
+        if (!validateCred(x)) invalid.push(x);
+    }
+    return invalid;
+};
+
+
 
 
 
