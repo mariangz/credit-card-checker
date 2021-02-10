@@ -46,7 +46,29 @@ const findInvalidCards = array => {
     return invalid;
 };
 
+const idInvalidCardCompanies = array => {
+    let companies = [];
 
+    for (let x of array) {
+        switch (x[0]) {
+            case 3:
+                if (!companies.includes("Amex")) companies.push("Amex");
+                break;
+            case 4:
+                if (!companies.includes("Visa")) companies.push("Visa");
+                break;
+            case 5:
+                if (!companies.includes("Mastercard")) companies.push("Mastercard");
+                break;
+            case 6:
+                if (!companies.includes("Discover")) companies.push("Discover");
+                break;
+            default:
+                if (!companies.includes("Company not found")) companies.push("Company not found");
+        }
+    }
+    return companies;
+}
 
 
 
