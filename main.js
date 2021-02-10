@@ -24,7 +24,19 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 // Add your functions below:
-
+const validadCred = array => {
+    let sum = 0;
+    let arrayReverse = array.slcie().reverse();
+    for (let i = 0; i < arrayReverse.length; i++) {
+        if (i % 2 === 0) sum += arrayReverse[i];
+        else {
+            let double = arrayReverse[i] * 2;
+            if (double > 9) double -= 9;
+            sum += double;
+        }
+    }
+    return (sum % 10 === 0);
+}
 
 
 
